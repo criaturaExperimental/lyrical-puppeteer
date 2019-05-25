@@ -1,20 +1,14 @@
-import puppeteer from 'puppeteer';
 import AskForInput from './readline';
+import automation from './automation';
+import queryAdapter from './adapters/queryAdapter';
 
 const question = new AskForInput();
 
-const query = question.ask('how are you doing? ');
+const query = question.ask('Name of artist or band lyrics you are looking for: ');
 
 query.then((answer) => {
+  answer = queryAdapter(answer);
   console.log(answer);
+  automation(answer);
 })
 
-// (async () => {
-//   const browser = await puppeteer.launch({
-//     headless: false
-//   });
-//   const page = await browser.newPage();
-//   await page.goto('https://google.com');
-
-//   await browser.close();
-// })();
