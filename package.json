@@ -1,8 +1,8 @@
 {
-  "name": "lyrical-puppetter",
+  "name": "lyrical-puppeteer",
   "version": "1.0.0",
   "scripts": {
-    "start": "node ./src/app.js"
+    "start": "node --experimental-modules ./src/app.mjs"
   },
   "main": "app.js",
   "author": "Lucas deGomez <lucasdegomez@gmail.com>",

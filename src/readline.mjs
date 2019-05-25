@@ -1,6 +1,6 @@
-const readline = require('readline');
+import readline from 'readline'
 
-module.exports = class AskForInput {
+export default class AskForInput {
   constructor(){
     this.rl = readline.createInterface({
       input: process.stdin,

@@ -1,13 +1,9 @@
-const puppeteer = require('puppeteer');
-const AskForInput = require('./readline');
+import puppeteer from 'puppeteer';
+import AskForInput from './readline';
 
 const question = new AskForInput();
 
 question.ask('how are you doing? ');
-
-// let parameter = process.argv[2];
-
-// console.log(parameter);
 
 // (async () => {
 //   const browser = await puppeteer.launch({
