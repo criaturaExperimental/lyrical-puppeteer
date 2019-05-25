@@ -3,7 +3,11 @@ import AskForInput from './readline';
 
 const question = new AskForInput();
 
-question.ask('how are you doing? ');
+const query = question.ask('how are you doing? ');
+
+query.then((answer) => {
+  console.log(answer);
+})
 
 // (async () => {
 //   const browser = await puppeteer.launch({

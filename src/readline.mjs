@@ -1,4 +1,4 @@
-import readline from 'readline'
+import readline from 'readline';
 
 export default class AskForInput {
   constructor(){
@@ -8,9 +8,17 @@ export default class AskForInput {
     });
   }
   ask(question) {
-    this.rl.question(question, (answer) => {
-      console.log(`That's a good answer: ${answer}`)
-      this.rl.close();
+    this.rl.setPrompt(question);
+    this.rl.prompt();
+
+    return new Promise(resolve => {
+        this.rl.on('line', (userInput) => {
+            this.answer = userInput;
+            this.rl.close();
+        });
+        this.rl.on('close', () => {
+          resolve(this.answer);
+      });
     })
   }
 }
